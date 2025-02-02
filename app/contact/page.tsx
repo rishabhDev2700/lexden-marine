@@ -45,31 +45,6 @@ export default function About() {
                     </motion.div>
                 </section>
 
-                {/* Stats Section */}
-                {/* <section className="py-20 bg-white">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="grid md:grid-cols-4 gap-8">
-                            {[
-                                { number: '50+', label: 'Years Experience' },
-                                { number: '100+', label: 'Countries Served' },
-                                { number: '1M+', label: 'Shipments Delivered' },
-                                { number: '10K+', label: 'Happy Clients' },
-                            ].map((stat, index) => (
-                                <motion.div
-                                    key={stat.label}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className="text-center"
-                                >
-                                    <div className="text-4xl font-bold text-lexden mb-2">{stat.number}</div>
-                                    <div className="text-gray-600">{stat.label}</div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section> */}
 
                 {/* Values Section */}
                 <section className="py-12">
@@ -92,9 +67,9 @@ export default function About() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="bg-white p-6 rounded-lg shadow-lg shadow-black/20 text-center md:w-2/3 md:mx-auto"
+                                className="bg-white p-6 rounded-lg shadow-lg shadow-black/10 text-center md:w-2/7 md:mx-auto border border-black/10"
                             >
-                                <form method='post' className='grid lg:grid-cols-2 gap-8 text-left'>
+                                <form method='post' className='grid lg:grid-cols-2 gap-4 text-left '>
                                     <div className="my-2">
                                         <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
                                         <input type="text" id="name" name="name" placeholder="Your name" required
@@ -114,12 +89,12 @@ export default function About() {
                                                 <SelectValue placeholder="Select a service" />
                                             </SelectTrigger>
                                             <SelectContent>
-                                                <SelectItem value="freight">Freight Shipping</SelectItem>
-                                                <SelectItem value="parcel">Parcel Delivery</SelectItem>
+                                                <SelectItem value="freight">Option-1</SelectItem>
+                                                <SelectItem value="parcel">Option-2</SelectItem>
                                                 <SelectItem value="international">
-                                                    International Shipping
+                                                    Option-3
                                                 </SelectItem>
-                                                <SelectItem value="custom">Custom Solutions</SelectItem>
+                                                <SelectItem value="custom">Option-4</SelectItem>
                                             </SelectContent>
                                         </Select>
                                     </div>

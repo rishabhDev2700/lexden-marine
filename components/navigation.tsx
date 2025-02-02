@@ -36,7 +36,7 @@ export default function Navigation() {
   const links = [
     { name: 'Home', href: '/', ariaLabel: 'Go to the Home page' },
     { name: 'Services', href: '/services', ariaLabel: 'View our Services' },
-    { name: 'Gallery', href: '/gallery', ariaLabel: 'Browse our Gallery' },
+    // { name: 'Gallery', href: '/gallery', ariaLabel: 'Browse our Gallery' },
     { name: 'Contact', href: '/contact', ariaLabel: 'Get in touch with us on the Contact page' },
     { name: 'About', href: '/about', ariaLabel: 'Learn more About us' },
   ];

@@ -40,7 +40,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
 
       {/* Hero Section */}
-      <section className="relative bg-lexden text-white py-24">
+      <section className="relative bg-lexden text-white py-12">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -58,16 +58,7 @@ export default function Home() {
               </h1>
               <p className="text-xl text-indigo-100 mb-8">
 With decades of trading and shipping expertise, Lexden Marine is able to efficiently procure dry bulk commodities from global markets              </p>
-              <Link href="/contact">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-lexden px-8 py-3 rounded-lg text-lg font-medium inline-flex items-center"
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </motion.button>
-              </Link>
+            
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -86,29 +77,16 @@ With decades of trading and shipping expertise, Lexden Marine is able to efficie
         </motion.div>
       </section>
 
-      {/* Features Section */}
-      <section ref={featuresRef} className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={featuresInView ? "visible" : "hidden"}
-            className="grid md:grid-cols-3 gap-8"
-          >
-          </motion.div>
-        </div>
-      </section>
-
       {/* Services Overview */}
-      <section className="bg-white pb-12 ">
+      <section className="bg-white pb-12 pt-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
-            <h2 className="text-3xl font-bold mb-4">Our Services</h2>
+            <h2 className='text-4xl mx-4 my-8 text-center'>Our Services</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Comprehensive procurement and trading of dry bulk commodities
             </p>
@@ -136,10 +114,10 @@ With decades of trading and shipping expertise, Lexden Marine is able to efficie
         </div>
       </section>
       <Separator className='w-1/2 mx-auto h-0.5' />
-      <section className="py-12 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className='text-4xl mx-4 mb-8 text-center'>Key Statistics</h1>
-          <div className="grid md:grid-cols-3 gap-y-16 md:gap-8 justify-evenly min-h-[50vh] pt-12">
+          <h2 className='text-4xl mx-4 my-8 text-center'>Key Statistics</h2>
+          <div className="grid md:grid-cols-3 gap-y-16 md:gap-8 justify-evenly min-h-[50vh] pt-4 lg:pt-12">
             {[
               { number: '750K–1M', label: 'Metric Tonnes of Raw Sugar Traded Annually' },
               { number: '700K–1.2M', label: 'Metric Tonnes of Soybeans Traded Annually' },
@@ -176,13 +154,13 @@ With decades of trading and shipping expertise, Lexden Marine is able to efficie
       <Separator className='w-1/2 mx-auto h-0.5' />
 
       {/* Contact Section */}
-      <section className="py-20">
+      <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-lg shadow-xl overflow-hidden"
+            className="bg-white rounded-lg shadow-xl border border-black/5 overflow-hidden"
           >
             <div className="grid md:grid-cols-2">
               <div className="p-8 md:p-12">
