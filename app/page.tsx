@@ -47,16 +47,16 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         >
-          <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-4 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <h1 className="text-2xl lg:text-4xl md:text-6xl font-bold mb-6">
                 Dry bulk commodity purchasing and trading
               </h1>
-              <p className="text-xl text-indigo-100 mb-8">
+              <p className="text-md lg:text-xl text-indigo-100 mb-8">
 With decades of trading and shipping expertise, Lexden Marine is able to efficiently procure dry bulk commodities from global markets              </p>
             
             </motion.div>
@@ -64,12 +64,12 @@ With decades of trading and shipping expertise, Lexden Marine is able to efficie
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="mt-12 lg:mt-0"
+              className="mt-8 lg:mt-0"
             >
               <Image
                 src={Image1}
                 alt="Container Ship"
-                className="rounded-lg shadow-xl"
+                className="rounded-lg shadow-xl h-56 object-cover"
                 priority
               />
             </motion.div>

@@ -20,7 +20,7 @@ export default function About() {
             <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Story</h1>
-                <p className="text-xl text-indigo-100">
+                <p className="text-md lg:text-xl text-indigo-100">
                   Lexden Marine is a trusted global commodities trader, specializing in sourcing and trading essential foodstuffs, with a focus on Bangladesh. With over 120 years of combined experience, our team delivers expert insights and reliable service, navigating complex markets to achieve exceptional results. Our strategic alliances with grain houses and major trading companies provide a competitive edge, ensuring efficient and seamless operations for our clients.
                 </p>
               </div>

@@ -18,7 +18,7 @@ export default function Services() {
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
-            <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
+            <p className="text-md lg:text-xl text-indigo-100 max-w-3xl mx-auto">
               Exceptional services and building lasting partnerships
             </p>
           </motion.div>

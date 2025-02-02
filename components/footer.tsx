@@ -10,7 +10,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Company Info */}
                     <div>
-                        <h3 className="text-2xl font-bold mb-4">Lexden Marine</h3>
+                        <h3 className="text-md lg:text-2xl font-bold mb-4">Lexden Marine</h3>
                         <p className="text-indigo-100">
                             Empowering businesses with seamless procurement and trading of dry bulk commodities
                         </p>
@@ -45,7 +45,7 @@ export default function Footer() {
 
                     {/* Contact Info */}
                     <div>
-                        <h3 className="text-xl font-bold mb-4">Contact Us</h3>
+                        <h3 className="text-md lg:text-xl font-bold mb-4">Contact Us</h3>
                         <ul className="space-y-4">
                             <li className="flex items-center space-x-3">
                                 <Phone className="text-white h-5 w-5" />

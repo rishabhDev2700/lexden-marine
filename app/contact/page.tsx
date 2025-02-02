@@ -25,7 +25,7 @@ export default function About() {
                         <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
                             <div>
                                 <h1 className="text-4xl md:text-5xl font-bold mb-6">Get in touch</h1>
-                                <p className="text-xl text-indigo-100">
+                                <p className="text-md lg:text-xl text-indigo-100">
                                     Ready to partner with a reliable leader in commodities trading? Contact us today to learn more about how Lexden Marine Ltd can support your business needs.
                                 </p>
                             </div>
