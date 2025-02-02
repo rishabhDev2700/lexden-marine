@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Navigation from '@/components/navigation';
-
+import { imageGallery } from '@/lib/data';
 import {
     Carousel,
     CarouselContent,
@@ -10,15 +9,16 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
+
 import Image from 'next/image';
+import shipImage from "@/assets/deck.webp"
 export default function Gallery() {
     return (
         <div className="min-h-screen bg-gray-50">
-            <Navigation />
 
             <main>
                 {/* Hero Section */}
-                <section className="bg-blue-900 text-white py-20">
+                <section className="bg-lexden text-white py-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ export default function Gallery() {
                         <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
                             <div>
                                 <h1 className="text-4xl md:text-5xl font-bold mb-6">Gallery</h1>
-                                <p className="text-xl text-blue-100">
+                                <p className="text-xl text-indigo-100">
                                     Pictures and videos
                                 </p>
                             </div>
@@ -38,10 +38,11 @@ export default function Gallery() {
                                 transition={{ delay: 0.2, duration: 0.8 }}
                                 className="mt-12 lg:mt-0"
                             >
-                                <img
-                                    src="https://images.pexels.com/photos/8937118/pexels-photo-8937118.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                <Image
+                                    src={shipImage}
                                     alt="Shipping Port"
                                     className="rounded-lg shadow-xl"
+                                    priority
                                 />
                             </motion.div>
                         </div>
@@ -67,14 +68,17 @@ export default function Gallery() {
                                 align: "start",
                                 loop: true,
                             }}>
-                                <CarouselContent className='flex items-center justify-center'>
-                                    <CarouselItem><Image alt="image" width={1024} height={200} src="https://images.pexels.com/photos/1427107/pexels-photo-1427107.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" /></CarouselItem>
-                                    <CarouselItem><Image alt="image" width={1024} height={200} src="https://images.pexels.com/photos/3075996/pexels-photo-3075996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" /></CarouselItem>
-                                    <CarouselItem><Image alt="image" width={1024} height={200} src="https://images.pexels.com/photos/3840447/pexels-photo-3840447.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" /></CarouselItem>
+                                <CarouselContent>
+                                    {imageGallery.map(i =>
+                                        <CarouselItem key={i.id}>
+                                            <Image className='aspect-video mx-auto rounded-sm object-cover' loading='eager' alt={i.alt} width={1024} height={300} src={i.src} />
+                                        </CarouselItem>
+                                    )}
                                 </CarouselContent>
                                 <CarouselPrevious />
                                 <CarouselNext />
                             </Carousel>
+
                         </div>
 
                     </div>

@@ -1,11 +1,15 @@
 'use client';
 
-import { Ship, Truck, Globe2, Package,ArrowRight, Phone, Mail, MapPin } from 'lucide-react';
+import { ArrowRight, Phone, Mail, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import Navigation from '@/components/navigation';
 import Link from 'next/link';
-
+import Image1 from "../assets/ship.webp"
+import Image from 'next/image';
+import { services } from '@/lib/data';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import stockImage from "@/assets/stock.webp"
 export default function Home() {
   const [featuresRef, featuresInView] = useInView({
     triggerOnce: true,
@@ -34,10 +38,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navigation />
-      
+
       {/* Hero Section */}
-      <section className="relative bg-blue-900 text-white py-24">
+      <section className="relative bg-lexden text-white py-24">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -51,21 +54,20 @@ export default function Home() {
               transition={{ delay: 0.2, duration: 0.8 }}
             >
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Global Shipping Solutions for Your Business
+                Dry bulk commodity purchasing and trading
               </h1>
-              <p className="text-xl text-blue-100 mb-8">
-                Reliable, efficient, and secure shipping services worldwide. Your trusted partner in global logistics.
-              </p>
+              <p className="text-xl text-indigo-100 mb-8">
+With decades of trading and shipping expertise, Lexden Marine is able to efficiently procure dry bulk commodities from global markets              </p>
               <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-blue-900 px-8 py-3 rounded-lg text-lg font-medium inline-flex items-center"
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white text-lexden px-8 py-3 rounded-lg text-lg font-medium inline-flex items-center"
                 >
-                Get Started
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </motion.button>
-                </Link>
+                  Get Started
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </motion.button>
+              </Link>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -73,10 +75,11 @@ export default function Home() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="mt-12 lg:mt-0"
             >
-              <img
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+              <Image
+                src={Image1}
                 alt="Container Ship"
                 className="rounded-lg shadow-xl"
+                priority
               />
             </motion.div>
           </div>
@@ -92,40 +95,13 @@ export default function Home() {
             animate={featuresInView ? "visible" : "hidden"}
             className="grid md:grid-cols-3 gap-8"
           >
-            {[
-              {
-                icon: <Ship className="h-8 w-8" />,
-                title: "Global Shipping",
-                description: "International shipping solutions for businesses of all sizes",
-              },
-              {
-                icon: <Package className="h-8 w-8" />,
-                title: "Bulk Shipping",
-                description: "Efficient transportation across continents",
-              },
-              {
-                icon: <Globe2 className="h-8 w-8" />,
-                title: "Worldwide Network",
-                description: "Connected to major ports and transportation hubs",
-              },
-            ].map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                variants={itemVariants}
-                className="bg-white p-6 rounded-lg shadow-md"
-              >
-                <div className="text-blue-600 mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
-            ))}
           </motion.div>
         </div>
       </section>
 
       {/* Services Overview */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-white pb-12 ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -134,45 +110,70 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold mb-4">Our Services</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Comprehensive shipping and logistics solutions tailored to your business needs
+              Comprehensive procurement and trading of dry bulk commodities
             </p>
           </motion.div>
+          <div className='grid md:grid-cols-2 gap-8'>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "Ocean Freight",
-                description: "Reliable sea freight services for all cargo types",
-                image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-              },
-              {
-                title: "Other services",
-                description: "Fast and secure transportation worldwide",
-                image: "https://images.pexels.com/photos/30168286/pexels-photo-30168286/free-photo-of-in-flight-view-of-clouds-with-airbus-wing.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-              },
-            ].map((service, index) => (
+
+            {services.map((feature, index) => (
               <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="relative overflow-hidden rounded-lg group"
+                key={feature.title}
+                variants={itemVariants}
+                className="bg-[#CACADC]/20 p-6 rounded-lg shadow-md shadow-[#CACADC]"
               >
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/0 p-6 flex flex-col justify-end">
-                  <h3 className="text-2xl font-bold text-white mb-2">{service.title}</h3>
-                  <p className="text-gray-200">{service.description}</p>
-                </div>
+                <div className="text-lexden mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
               </motion.div>
             ))}
           </div>
+          <Link href="/services" className='mt-8'>
+            <Button className='bg-lexden hover:bg-indigo-800'>
+              Learn more
+            </Button>
+          </Link>
+
         </div>
       </section>
+      <Separator className='w-1/2 mx-auto h-0.5' />
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className='text-4xl mx-4 mb-8 text-center'>Key Statistics</h1>
+          <div className="grid md:grid-cols-3 gap-y-16 md:gap-8 justify-evenly min-h-[50vh] pt-12">
+            {[
+              { number: '750K–1M', label: 'Metric Tonnes of Raw Sugar Traded Annually' },
+              { number: '700K–1.2M', label: 'Metric Tonnes of Soybeans Traded Annually' },
+              { number: '600K–1.5M', label: 'Metric Tonnes of Wheat Traded Annually' },
+              { number: '200K–400K', label: 'Metric Tonnes of Corn Traded Annually' },
+              { number: '100K–300K', label: 'Metric Tonnes of Pulses Traded Annually' },
+              { number: '200K–400K', label: 'Metric Tonnes of Edible Oils Traded Annually' },
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-4xl font-bold text-lexden mb-2">{stat.number}</div>
+                <div className="text-gray-600">{stat.label}</div>
+              </motion.div>
+
+            ))}
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <div className="text-gray-600 my-8 font-light">(Note: These figures highlight our significant presence and capacity in the global commodities market, demonstrating our ability to handle large-scale trading operations efficiently.)
+            </div>
+          </motion.div>
+        </div>
+      </section>
+      <Separator className='w-1/2 mx-auto h-0.5' />
 
       {/* Contact Section */}
       <section className="py-20">
@@ -194,7 +195,7 @@ export default function Home() {
                     },
                     {
                       icon: <Mail className="h-5 w-5" />,
-                      text: "contact@shipco.com",
+                      text: "contact@lexdenmarine.com",
                     },
                     {
                       icon: <MapPin className="h-5 w-5" />,
@@ -202,15 +203,15 @@ export default function Home() {
                     },
                   ].map((contact) => (
                     <div key={contact.text} className="flex items-center space-x-3">
-                      <div className="text-blue-600">{contact.icon}</div>
+                      <div className="text-lexden">{contact.icon}</div>
                       <span className="text-gray-600">{contact.text}</span>
                     </div>
                   ))}
                 </div>
               </div>
               <div className="relative h-64 md:h-auto">
-                <img
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                <Image
+                  src={stockImage}
                   alt="Contact"
                   className="absolute inset-0 w-full h-full object-cover"
                 />

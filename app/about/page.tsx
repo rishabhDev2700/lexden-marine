@@ -2,16 +2,15 @@
 
 import { motion } from 'framer-motion';
 import { Users, Target, Award, TrendingUp } from 'lucide-react';
-import Navigation from '@/components/navigation';
-
+import Image from 'next/image';
+import Cover from "@/assets/claw-2.webp"
 export default function About() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navigation />
-      
+
       <main>
         {/* Hero Section */}
-        <section className="bg-blue-900 text-white py-20">
+        <section className="bg-lexden text-white py-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -21,8 +20,8 @@ export default function About() {
             <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Story</h1>
-                <p className="text-xl text-blue-100">
-                  Leading the way in global shipping and logistics since 1970, delivering excellence and reliability to businesses worldwide.
+                <p className="text-xl text-indigo-100">
+                  Lexden Marine is a trusted global commodities trader, specializing in sourcing and trading essential foodstuffs, with a focus on Bangladesh. With over 120 years of combined experience, our team delivers expert insights and reliable service, navigating complex markets to achieve exceptional results. Our strategic alliances with grain houses and major trading companies provide a competitive edge, ensuring efficient and seamless operations for our clients.
                 </p>
               </div>
               <motion.div
@@ -31,10 +30,11 @@ export default function About() {
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="mt-12 lg:mt-0"
               >
-                <img
-                  src="https://images.unsplash.com/photo-1577416412292-747c6607f055?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                <Image
+                  src={Cover}
                   alt="Shipping Port"
                   className="rounded-lg shadow-xl"
+                  priority
                 />
               </motion.div>
             </div>
@@ -42,30 +42,8 @@ export default function About() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-4 gap-8">
-              {[
-                { number: '50+', label: 'Years Experience' },
-                { number: '100+', label: 'Countries Served' },
-                { number: '1M+', label: 'Shipments Delivered' },
-                { number: '10K+', label: 'Happy Clients' },
-              ].map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="text-4xl font-bold text-blue-600 mb-2">{stat.number}</div>
-                  <div className="text-gray-600">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+
+        {/* <Navigation /> */}
 
         {/* Values Section */}
         <section className="py-20">
@@ -113,7 +91,7 @@ export default function About() {
                   transition={{ delay: index * 0.1 }}
                   className="bg-white p-6 rounded-lg shadow-md text-center"
                 >
-                  <div className="text-blue-600 mb-4 flex justify-center">{value.icon}</div>
+                  <div className="text-lexden mb-4 flex justify-center">{value.icon}</div>
                   <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
                   <p className="text-gray-600">{value.description}</p>
                 </motion.div>
@@ -123,7 +101,7 @@ export default function About() {
         </section>
 
         {/* Team Section */}
-        <section className="py-20 bg-white">
+        {/* <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -172,7 +150,7 @@ export default function About() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );
