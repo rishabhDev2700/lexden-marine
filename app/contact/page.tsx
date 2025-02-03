@@ -82,19 +82,19 @@ export default function About() {
                                             className="mt-1 p-2 block w-full border rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                                     </div>
 
-                                    <div className="my-2 lg:col-span-2">
-                                        <label htmlFor="service-type" className="block text-sm font-medium text-gray-700">Service Type</label>
-                                        <Select>
+                                    <div className="lg:col-span-2">
+                                        <label htmlFor="service-type" className="block text-sm font-medium text-gray-700 my-2">Service Type</label>
+                                        <Select name='service-type'>
                                             <SelectTrigger className="w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
                                                 <SelectValue placeholder="Select a service" />
                                             </SelectTrigger>
                                             <SelectContent>
-                                                <SelectItem value="freight">Option-1</SelectItem>
-                                                <SelectItem value="parcel">Option-2</SelectItem>
-                                                <SelectItem value="international">
-                                                    Option-3
+                                                <SelectItem value="procurement-and-trading">Procurement and Trading</SelectItem>
+                                                <SelectItem value="trading-support-services">Trading Support Services</SelectItem>
+                                                <SelectItem value="documentation-and-trade-finance">
+                                                    Documentation and Trade Finance
                                                 </SelectItem>
-                                                <SelectItem value="custom">Option-4</SelectItem>
+                                                <SelectItem value="market-analysis-and-strategy">Market Analysis and Strategy</SelectItem>
                                             </SelectContent>
                                         </Select>
                                     </div>

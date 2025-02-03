@@ -64,7 +64,6 @@ export default function Services() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl font-bold mb-4">Why Choose Our Services</h2>
-              <p className="text-gray-600">Experience the difference with our premium shipping solutions</p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-8">

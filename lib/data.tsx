@@ -18,7 +18,7 @@ export const services = [
     {
         icon: <Container className="h-12 w-12" />, // Replace with an appropriate icon
         title: 'Procurement and Trading',
-        description: 'Specializing in dry bulk soft commodities, vegetable oils, metals, and coal.',
+        description: 'Specializing in dry bulk soft commodities, vegetable oils, and coal.',
         features: [
             'High-quality product sourcing',
             'Diverse market demands',
@@ -28,7 +28,7 @@ export const services = [
         icon: <HeartHandshake className="h-12 w-12" />, // Replace with an appropriate icon
         title: 'Trading Support Services',
         description:
-            'Value-added procurement and trading services for small and medium-sized trading houses.',
+            'Value-added procurement and trading services.',
         features: [
             'Purchasing',
             'Trading logistics',

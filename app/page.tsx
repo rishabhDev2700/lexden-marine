@@ -53,12 +53,12 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              <h1 className="text-2xl lg:text-4xl md:text-6xl font-bold mb-6">
+              <h1 className="text-xl font-semibold lg:text-4xl md:text-6xl mb-6">
                 Dry bulk commodity purchasing and trading
               </h1>
-              <p className="text-md lg:text-xl text-indigo-100 mb-8">
-With decades of trading and shipping expertise, Lexden Marine is able to efficiently procure dry bulk commodities from global markets              </p>
-            
+              <p className="text-md font-light lg:text-xl text-indigo-100 mb-8">
+                With decades of trading and shipping expertise, Lexden Marine is able to efficiently procure dry bulk commodities from global markets              </p>
+
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -69,7 +69,7 @@ With decades of trading and shipping expertise, Lexden Marine is able to efficie
               <Image
                 src={Image1}
                 alt="Container Ship"
-                className="rounded-lg shadow-xl h-56 object-cover"
+                className="rounded-lg shadow-xl h-24 lg:h-auto object-cover"
                 priority
               />
             </motion.div>
@@ -87,7 +87,7 @@ With decades of trading and shipping expertise, Lexden Marine is able to efficie
             className="text-center mb-8"
           >
             <h2 className='text-4xl mx-4 my-8 text-center'>Our Services</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-md text-gray-600 max-w-2xl mx-auto">
               Comprehensive procurement and trading of dry bulk commodities
             </p>
           </motion.div>
@@ -98,16 +98,16 @@ With decades of trading and shipping expertise, Lexden Marine is able to efficie
               <motion.div
                 key={feature.title}
                 variants={itemVariants}
-                className="bg-[#CACADC]/20 p-6 rounded-lg shadow-md shadow-[#CACADC]"
+                className="bg-[#CACADC]/20 p-6 rounded-lg shadow-md shadow-[#CACADC] flex items-center justify-between"
               >
-                <div className="text-lexden mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                <div className="text-lexden mx-2">{feature.icon}</div>
+                <h3 className="text-md lg:text-xl font-semibold mx-2 text-center">{feature.title}</h3>
               </motion.div>
             ))}
           </div>
           <Link href="/services" className='mt-8'>
             <Button className='bg-lexden hover:bg-indigo-800'>
-              Learn more
+              Explore Services
             </Button>
           </Link>
 
@@ -117,7 +117,7 @@ With decades of trading and shipping expertise, Lexden Marine is able to efficie
       <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className='text-4xl mx-4 my-8 text-center'>Key Statistics</h2>
-          <div className="grid md:grid-cols-3 gap-y-16 md:gap-8 justify-evenly min-h-[50vh] pt-4 lg:pt-12">
+          <div className="grid md:grid-cols-3 gap-y-16 lg:gap-y-12 md:gap-8 justify-evenly lg:min-h-[35vh] pt-4">
             {[
               { number: '750K–1M', label: 'Metric Tonnes of Raw Sugar Traded Annually' },
               { number: '700K–1.2M', label: 'Metric Tonnes of Soybeans Traded Annually' },
@@ -132,10 +132,10 @@ With decades of trading and shipping expertise, Lexden Marine is able to efficie
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="text-center"
+                className="text-center lg:place-content-start"
               >
                 <div className="text-4xl font-bold text-lexden mb-2">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-md text-gray-600">{stat.label}</div>
               </motion.div>
 
             ))}
@@ -146,7 +146,7 @@ With decades of trading and shipping expertise, Lexden Marine is able to efficie
             viewport={{ once: true }}
             className="text-center"
           >
-            <div className="text-gray-600 my-8 font-light">(Note: These figures highlight our significant presence and capacity in the global commodities market, demonstrating our ability to handle large-scale trading operations efficiently.)
+            <div className="text-gray-600 my-8 font-light text-sm">(Note: These figures highlight our significant presence and capacity in the global commodities market, demonstrating our ability to handle large-scale trading operations efficiently.)
             </div>
           </motion.div>
         </div>

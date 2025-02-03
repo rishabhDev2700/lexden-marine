@@ -42,55 +42,49 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Sheet >
-            <SheetTrigger className='md:hidden' aria-label="Open main menu" ><Menu /></SheetTrigger>
-            <SheetContent side="left">
-              <SheetHeader>
-                <SheetTitle>Navigate</SheetTitle>
-                <SheetDescription className="flex flex-col">
-                  {links.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="relative inline-flex items-center px-4 py-2 my-2 text-sm font-medium text-gray-900"
-                      aria-label={item.ariaLabel}
-                    >
-                      {item.name}
+    <nav className="bg-white shadow-sm flex justify-between items-center h-14 px-4 xl:px-12 xl:w-2/3 xl:mx-auto">
+      <Sheet >
+        <SheetTrigger className='md:hidden' aria-label="Open main menu" ><Menu /></SheetTrigger>
+        <SheetContent side="left" className='md:hidden'>
+          <SheetHeader>
+            <SheetTitle>Navigate</SheetTitle>
+            <SheetDescription className="flex flex-col">
+              {links.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="relative inline-flex items-center px-4 py-2 my-2 text-sm font-medium text-gray-900"
+                  aria-label={item.ariaLabel}
+                >
+                  {item.name}
 
-                    </Link>
-                  ))}
-                </SheetDescription>
-              </SheetHeader>
-            </SheetContent>
-          </Sheet>
+                </Link>
+              ))}
+            </SheetDescription>
+          </SheetHeader>
+        </SheetContent>
+      </Sheet>
+      <Link href="/" className="flex items-center mx-auto  2xl:mx-0">
+        <Image src={logo} alt="Lexden marine Ltd." width="56" />
+        <span className="text-xl font-bold text-gray-900">Lexden Marine</span>
+      </Link>
 
-          <Link href="/" className="flex items-center space-x-2 mx-auto 2xl:mx-0">
-            <Image src={logo} alt="Lexden marine Ltd." width="56" />
-            <span className="text-xl font-bold text-gray-900">Lexden Marine</span>
+      <div className="hidden md:flex space-x-2">
+        {links.map((item) => (
+          <Link
+            key={item.name}
+            href={item.href}
+            className="relative inline-flex items-center px-1 mx-4 pt-1 text-sm font-medium text-gray-900"
+          >
+            {item.name}
+            {isActive(item.href) && (
+              <motion.div
+                layoutId="underline"
+                className="absolute left-0 top-full h-0.5 w-full bg-lexden"
+              />
+            )}
           </Link>
-
-          <div className="hidden md:flex space-x-8">
-            {links.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="relative inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900"
-              >
-                {item.name}
-                {isActive(item.href) && (
-                  <motion.div
-                    layoutId="underline"
-                    className="absolute left-0 top-full h-0.5 w-full bg-lexden"
-                  />
-                )}
-              </Link>
-            ))}
-          </div>
-          
-        </div>
+        ))}
       </div>
     </nav>
   );
