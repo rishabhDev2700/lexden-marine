@@ -1,6 +1,6 @@
 'use client';
 
-import {Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -47,7 +47,9 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center space-x-3">
                                 <Mail className="text-white h-5 w-5" />
-                                <span className="text-indigo-100">contact@lexdenmarine.com</span>
+                                <a href="mailto:trading@lexdenmarine.com">
+                                    <span className="text-indigo-100">trading@lexdenmarine.com</span>
+                                </a>
                             </li>
                             <li className="flex items-center space-x-3">
                                 <MapPin className="text-white h-5 w-5" />

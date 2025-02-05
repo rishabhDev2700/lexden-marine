@@ -42,7 +42,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="bg-white shadow-sm flex justify-between items-center h-14 px-4 xl:px-12 xl:w-2/3 xl:mx-auto">
+    <nav className="bg-white shadow-sm flex justify-between items-center h-14 px-4 xl:w-1/2 xl:mx-auto">
       <Sheet >
         <SheetTrigger className='md:hidden' aria-label="Open main menu" ><Menu /></SheetTrigger>
         <SheetContent side="left" className='md:hidden'>
@@ -64,7 +64,7 @@ export default function Navigation() {
           </SheetHeader>
         </SheetContent>
       </Sheet>
-      <Link href="/" className="flex items-center mx-auto  2xl:mx-0">
+      <Link href="/" className="flex items-center mx-auto md:ml-0">
         <Image src={logo} alt="Lexden marine Ltd." width="56" />
         <span className="text-xl font-bold text-gray-900">Lexden Marine</span>
       </Link>

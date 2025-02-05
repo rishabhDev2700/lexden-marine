@@ -10,7 +10,7 @@ export default function About() {
 
       <main>
         {/* Hero Section */}
-        <section className="bg-lexden text-white py-20">
+        <section className="bg-lexden text-white py-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -28,12 +28,12 @@ export default function About() {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
-                className="mt-12 lg:mt-0"
+                className="mt-4 lg:mt-0"
               >
                 <Image
                   src={Cover}
                   alt="Shipping Port"
-                  className="rounded-lg shadow-xl"
+                  className="rounded-lg shadow-xl h-48 lg:h-80 object-cover"
                   priority
                 />
               </motion.div>

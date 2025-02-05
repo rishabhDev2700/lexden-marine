@@ -69,7 +69,7 @@ export default function Home() {
               <Image
                 src={Image1}
                 alt="Container Ship"
-                className="rounded-lg shadow-xl h-24 lg:h-auto object-cover"
+                className="rounded-lg shadow-xl max-h-[220px] md:max-h-[360px] lg:h-96 object-cover"
                 priority
               />
             </motion.div>
